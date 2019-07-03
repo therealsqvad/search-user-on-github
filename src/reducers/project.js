@@ -26,14 +26,14 @@ function fetchProject(state) {
   };
 }
 
-function fetchProjectSuccess(state, { forecast }) {
+function fetchProjectSuccess(state, { project }) {
   console.log('reducer fetch project success');
 
   return {
     ...state,
     error: null,
     loading: false,
-    forecast
+    project
   };
 }
 

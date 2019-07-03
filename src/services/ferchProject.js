@@ -1,13 +1,7 @@
-export default function fetchProject(subject) {
-  const url = `https://api.github.com/search/repositories?q=${subject}`;
-
-  console.log('service fetchproject');
-  return fetch(url).then(response => response.json())
-    // .then(json => {
-    //   console.log(json);
-    //   return { total: json.total_count };
-    // });
-    .then(({ items }) => {
+export default function makeAndHandleRequest(query) {
+  return fetch(`https://api.github.com/search/repositories?q=${query}`)
+    .then(resp => resp.json())
+    .then(({ items, total_count }) => { /* eslint-disable-line camelcase */
       const options = items.map(i => ({
         id: i.id,
         full_name: i.full_name,
@@ -16,7 +10,6 @@ export default function fetchProject(subject) {
         watchers_count: i.watchers_count
       }));
 
-      console.log(options);
-      return options;
+      return { options, total_count };
     });
 }

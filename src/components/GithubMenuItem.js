@@ -3,23 +3,14 @@ import React from 'react';
 
 const GithubMenuItem = ({ user }) => (
   <div>
-    {/* <img
-      alt={project.login}
-      src={user.avatar_url}
-      style={{
-        height: '24px',
-        marginRight: '10px',
-        width: '24px',
-      }}
-    /> */}
     <span>{user.full_name}</span>
     <span>
-Количество звезд:
+    ☆
       {' '}
       {user.stargazers_count}
     </span>
     <span>
-Количество подписчиков:
+    👁
       {' '}
       {user.watchers_count}
     </span>
@@ -28,6 +19,7 @@ const GithubMenuItem = ({ user }) => (
 );
 
 GithubMenuItem.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   user: PropTypes.shape({
     full_name: PropTypes.string.isRequired,
     html_url: PropTypes.string.isRequired,
@@ -37,3 +29,29 @@ GithubMenuItem.propTypes = {
 };
 
 export default GithubMenuItem;
+// import PropTypes from 'prop-types';
+// import React from 'react';
+
+// const GithubMenuItem = ({ user }) => (
+//   <div>
+//     <img
+//       alt={user.login}
+//       src={user.avatar_url}
+//       style={{
+//         height: '24px',
+//         marginRight: '10px',
+//         width: '24px'
+//       }}
+//     />
+//     <span>{user.login}</span>
+//   </div>
+// );
+
+// GithubMenuItem.propTypes = {
+//   user: PropTypes.shape({
+//     avatar_url: PropTypes.string.isRequired,
+//     login: PropTypes.string.isRequired
+//   }).isRequired
+// };
+
+// export default GithubMenuItem;

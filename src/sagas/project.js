@@ -7,7 +7,7 @@ import projectActions from '../actions/project';
 import projectSelector from '../selectors/index';
 
 
-export function* fetchProject(action) {
+export function* fetchProject() {
   try {
     const searchText = yield select(projectSelector.getSearchText);
     const response = yield call(fetchProjectService, searchText);
