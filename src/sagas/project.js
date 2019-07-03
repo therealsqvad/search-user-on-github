@@ -1,10 +1,10 @@
 // import { takeEvery } from 'redux-saga';
 import {
-  call, put, select, takeEvery
+  call, put, select, takeLatest
 } from 'redux-saga/effects';
 import fetchProjectService from '../services/ferchProject';
 import projectActions from '../actions/project';
-import projectSelector from '../selectors/index';
+import projectSelector from '../selectors';
 
 
 export function* fetchProject() {
@@ -13,12 +13,11 @@ export function* fetchProject() {
     const response = yield call(fetchProjectService, searchText);
 
     console.log(response);
-    console.log('saga fetchproject');
-    yield put(projectActions.fetchWeatherSucces(response));
+    yield put(projectActions.fetchProjectSuccess(response));
   } catch (error) {
-    yield put(projectActions.fetchWeatherError(error));
+    yield put(projectActions.fetchProjectError(error));
   }
 }
 export function* watchFetchProject() {
-  yield* takeEvery('FETCH_PROJECT', fetchProject);
+  yield takeLatest('FETCH_PROJECT', fetchProject);
 }

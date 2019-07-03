@@ -1,7 +1,8 @@
-export default function makeAndHandleRequest(query) {
-  return fetch(`https://api.github.com/search/repositories?q=${query}`)
-    .then(resp => resp.json())
-    .then(({ items, total_count }) => { /* eslint-disable-line camelcase */
+export default async subject => {
+  const url = `https://api.github.com/search/repositories?q=${subject}`;
+
+  return fetch(url).then(response => response.json())
+    .then(({ items }) => {
       const options = items.map(i => ({
         id: i.id,
         full_name: i.full_name,
@@ -10,6 +11,7 @@ export default function makeAndHandleRequest(query) {
         watchers_count: i.watchers_count
       }));
 
-      return { options, total_count };
+      console.log(options);
+      return options;
     });
-}
+};

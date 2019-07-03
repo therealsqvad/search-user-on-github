@@ -1,10 +1,10 @@
 const initialState = {
-  project: {
+  project: [{
     html_url: '',
     full_name: '',
     stargazers_count: 0,
     watchers_count: 0
-  },
+  }],
   loading: false,
   error: null,
   searchText: ''
@@ -18,7 +18,6 @@ function setSearchText(state, { searchText }) {
 }
 
 function fetchProject(state) {
-  console.log('reducer fetch project');
   return {
     ...state,
     error: null,
@@ -27,8 +26,6 @@ function fetchProject(state) {
 }
 
 function fetchProjectSuccess(state, { project }) {
-  console.log('reducer fetch project success');
-
   return {
     ...state,
     error: null,

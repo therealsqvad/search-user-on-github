@@ -5,8 +5,11 @@ import './index.css';
 import App from './components/App/App';
 import configureStore from './store/configureStore';
 import * as serviceWorker from './serviceWorker';
+import rootSaga from './sagas';
 
 const store = configureStore();
+
+store.runSaga(rootSaga);
 
 store.subscribe(() => {
   console.log('subscribe', store.getState());
