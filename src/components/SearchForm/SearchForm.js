@@ -13,10 +13,11 @@ class SearchForm extends Component {
         <FormControl
           size="lg"
           placeholder="Поиск проекта на Github..."
-          minLength={3}
           onChange={event => {
-            actions.setSearchText(event.target.value);
-            actions.fetchProject();
+            if (event.target.value.length > 2) {
+              actions.setSearchText(event.target.value);
+              actions.fetchProject();
+            }
           }}
         />
         <div>
