@@ -3,7 +3,8 @@ import React from 'react';
 
 const GithubMenuItem = ({ user }) => (
   <div>
-    <a href={user.html_url}><span>{user.full_name}</span></a>
+    {/* <span>{user.full_name}</span> */}
+    {/* <a href={user.html_url}><span>{user.full_name}</span></a> */}
     <span>
       {'   ☆'}
       {user.stargazers_count}

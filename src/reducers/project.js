@@ -1,5 +1,5 @@
 const initialState = {
-  project: [{
+  projects: [{
     html_url: '',
     full_name: '',
     stargazers_count: 0,
@@ -25,12 +25,12 @@ function fetchProject(state) {
   };
 }
 
-function fetchProjectSuccess(state, { project }) {
+function fetchProjectSuccess(state, { projects }) {
   return {
     ...state,
     error: null,
     loading: false,
-    project
+    projects
   };
 }
 

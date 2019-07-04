@@ -6,6 +6,6 @@ const FETCH_PROJECT_ERROR = 'FETCH_PROJECT_ERROR';
 export default {
   setSearchText: searchText => ({ type: SET_SEARCH_TEXT, searchText }),
   fetchProject: () => ({ type: FETCH_PROJECT }),
-  fetchProjectSuccess: project => ({ type: FETCH_PROJECT_SUCCESS, project }),
+  fetchProjectSuccess: projects => ({ type: FETCH_PROJECT_SUCCESS, projects }),
   fetchProjectError: () => ({ type: FETCH_PROJECT_ERROR })
 };
