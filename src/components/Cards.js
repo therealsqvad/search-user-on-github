@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-// import React from 'react';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
@@ -11,7 +9,6 @@ class Cards extends Component {
     return (
       <div style={{ visibility: projects[0].full_name === '' ? 'hidden' : 'visible' }}>
         { projects.map(item => (
-
           <Card
             key={item.id + item.full_name}
             style={{
@@ -19,7 +16,6 @@ class Cards extends Component {
             }}
           >
             <Card.Body>
-
               <Card.Title>
                 {' '}
                 <a href={item.html_url}><span>{item.full_name}</span></a>

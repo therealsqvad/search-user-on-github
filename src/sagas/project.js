@@ -1,4 +1,3 @@
-// import { takeEvery } from 'redux-saga';
 import {
   call, put, select, takeLatest
 } from 'redux-saga/effects';
