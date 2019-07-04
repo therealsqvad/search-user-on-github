@@ -11,7 +11,6 @@ export default async subject => {
         watchers_count: i.watchers_count
       }));
 
-      console.log(options);
       return options;
     });
 };

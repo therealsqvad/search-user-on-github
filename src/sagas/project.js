@@ -12,7 +12,6 @@ export function* fetchProject() {
     const searchText = yield select(projectSelector.getSearchText);
     const response = yield call(fetchProjectService, searchText);
 
-    console.log(response);
     yield put(projectActions.fetchProjectSuccess(response));
   } catch (error) {
     yield put(projectActions.fetchProjectError(error));
